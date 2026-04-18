@@ -7,9 +7,10 @@ const LandingScreen      = dynamic(() => import("@/components/LandingScreen"),  
 const MessageSection     = dynamic(() => import("@/components/MessageSection"),     { ssr: false });
 const InteractiveSection = dynamic(() => import("@/components/InteractiveSection"), { ssr: false });
 const GameSection        = dynamic(() => import("@/components/GameSection"),        { ssr: false });
+const QuizSection        = dynamic(() => import("@/components/QuizSection"),        { ssr: false });
 const EndingScreen       = dynamic(() => import("@/components/EndingScreen"),       { ssr: false });
 
-type Section = "landing" | "message" | "interactive" | "game" | "ending";
+type Section = "landing" | "message" | "interactive" | "game" | "quiz" | "ending";
 
 export default function BirthdayPage() {
   const [section, setSection] = useState<Section>("landing");
@@ -20,7 +21,8 @@ export default function BirthdayPage() {
       {section === "landing"     && <LandingScreen      onNext={() => go("message")}     />}
       {section === "message"     && <MessageSection     onNext={() => go("interactive")} />}
       {section === "interactive" && <InteractiveSection onNext={() => go("game")}        />}
-      {section === "game"        && <GameSection        onNext={() => go("ending")}      />}
+      {section === "game"        && <GameSection        onNext={() => go("quiz")}        />}
+      {section === "quiz"        && <QuizSection        onNext={() => go("ending")}      />}
       {section === "ending"      && <EndingScreen                                        />}
     </main>
   );
