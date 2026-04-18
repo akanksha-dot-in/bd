@@ -1,3 +1,9 @@
+// components/sections/GameSection.tsx
+// ─────────────────────────────────────────────────────────────────────────────
+// CHANGES: Only user-facing text / labels updated. All logic, state, refs,
+//          handlers, and structure are 100% untouched.
+// ─────────────────────────────────────────────────────────────────────────────
+
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -108,12 +114,15 @@ export default function GameSection({ onNext }: Props) {
 
   const grade = score >= 120 ? "S" : score >= 80 ? "A" : score >= 50 ? "B" : "C";
   const gradeColor = { S:"#FFD700", A:"#FF3CAC", B:"#7B2FBE", C:"#2B86C5" }[grade]!;
+
+  // ── CHANGED: Personalized Hinglish grade messages ──────────────────────────
   const gradeMsg = {
-    S: "Absolutely unhinged. You ate that up 🔥",
-    A: "Okay okay, we respect this performance 💅",
-    B: "Solid effort. We'll take it, birthday girl 🎂",
-    C: "You were distracted thinking about cake. Fair. 🍰",
+    S: "Arey arey ap to ek dum fire nikle  — bilkul apni tarah 🔥",
+    A: "Okay okay, aura++ — knew ki ap shandaar honge 💅",
+    B: "Solid effort, birthday king! Cake ka soch rahe the? Haina 🎂",
+    C: "Pakka distracted the types of kisses ka soch rahe the — next time focus, I believe in you 🍰",
   }[grade]!;
+  // ──────────────────────────────────────────────────────────────────────────
 
   const timerPct = (timeLeft / DURATION) * 100;
   const timerColor = timeLeft > 12 ? "#11998e" : timeLeft > 7 ? "#FFB347" : "#FF3CAC";
@@ -139,6 +148,8 @@ export default function GameSection({ onNext }: Props) {
               >
                 🎮
               </motion.div>
+
+              {/* ── CHANGED: Personalized intro heading & subtitle ── */}
               <div className="space-y-2">
                 <h2
                   className="font-display text-[2.4rem] leading-none"
@@ -147,20 +158,20 @@ export default function GameSection({ onNext }: Props) {
                     WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
                   }}
                 >
-                  Catch the vibes.
+                  Vibes pakad, chaos nahi.
                 </h2>
                 <p className="font-accent italic text-candy-cream/60 text-[15px]">
-                  tap the birthday stuff, dodge the chaos
+                  birthday wali emojis tap kar, bombs se bach — simple hai tu 😌
                 </p>
               </div>
 
-              {/* Rules */}
+              {/* ── CHANGED: Personalized rules in Hinglish ── */}
               <div className="glass rounded-2xl p-5 w-full space-y-3 text-left">
                 {[
-                  { icon:"🎂", rule:"Tap birthday emojis → points" },
-                  { icon:"💀", rule:"Avoid bombs → lose 15 pts" },
-                  { icon:"🔥", rule:"3+ combo → score multiplier" },
-                  { icon:"⏱️", rule:`You have ${DURATION} seconds` },
+                  { icon:"🎂", rule:"Birthday emojis tap kar → points milenge" },
+                  { icon:"💀", rule:"Bombs se bach → 15 pts jayenge" },
+                  { icon:"🔥", rule:"3+ combo → multiplier activate!" },
+                  { icon:"⏱️", rule:`Sirf ${DURATION} seconds hain, queen` },
                 ].map(({icon,rule}) => (
                   <div key={rule} className="flex items-center gap-3">
                     <span className="text-xl w-7 text-center">{icon}</span>
@@ -169,8 +180,9 @@ export default function GameSection({ onNext }: Props) {
                 ))}
               </div>
 
+              {/* ── CHANGED: CTA button label ── */}
               <CTAButton onClick={startGame} variant="pink" className="w-full">
-                Let&apos;s go 🚀
+                Chalo phir, start kariye 🚀
               </CTAButton>
             </div>
           </motion.div>
@@ -184,6 +196,7 @@ export default function GameSection({ onNext }: Props) {
           <div className="absolute top-0 left-0 right-0 z-30 px-5 pt-10 pb-3 flex flex-col gap-2">
             <div className="flex items-center justify-between">
               <div className="glass rounded-xl px-4 py-2 flex items-center gap-2">
+                {/* ── CHANGED: HUD label ── */}
                 <span className="text-sm font-body text-candy-cream/50">Score</span>
                 <motion.span
                   key={score}
@@ -234,7 +247,7 @@ export default function GameSection({ onNext }: Props) {
             </div>
           </div>
 
-          {/* Bubble arena */}
+          {/* Bubble arena — no changes */}
           <div className="absolute inset-0 top-24">
             <AnimatePresence>
               {bubbles.map(b => (
@@ -267,7 +280,7 @@ export default function GameSection({ onNext }: Props) {
             </AnimatePresence>
           </div>
 
-          {/* Floating hit labels */}
+          {/* Floating hit labels — no changes */}
           <AnimatePresence>
             {hits.map(h => (
               <motion.div
@@ -300,7 +313,7 @@ export default function GameSection({ onNext }: Props) {
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
               className="w-full max-w-sm flex flex-col items-center gap-5 text-center"
             >
-              {/* Grade */}
+              {/* Grade badge — no changes */}
               <motion.div
                 initial={{ rotate: -20, scale: 0 }}
                 animate={{ rotate: 0, scale: 1 }}
@@ -312,6 +325,7 @@ export default function GameSection({ onNext }: Props) {
                 <span className="font-body text-xs text-candy-cream/40 uppercase tracking-widest">rank</span>
               </motion.div>
 
+              {/* ── CHANGED: Results heading ── */}
               <h2
                 className="font-display text-[2rem] leading-tight"
                 style={{
@@ -319,16 +333,19 @@ export default function GameSection({ onNext }: Props) {
                   WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
                 }}
               >
-                Game Over!
+                Ho gaya, mere sher! 🎊
               </h2>
+
+              {/* ── CHANGED: Grade message (Hinglish, personalized) ── */}
               <p className="font-accent italic text-candy-cream/65 text-[15px] px-4">{gradeMsg}</p>
 
-              {/* Stats */}
+              {/* Stats — labels lightly changed */}
               <div className="glass rounded-2xl p-5 w-full grid grid-cols-3 gap-3">
                 {[
-                  { label: "Score",      value: score,     icon: "⭐" },
-                  { label: "Best Combo", value: `x${bestCombo}`, icon: "🔥" },
-                  { label: "Missed",     value: missed,    icon: "😬" },
+                  { label: "Score",       value: score,          icon: "⭐" },
+                  // ── CHANGED: label in Hinglish ──
+                  { label: "Best Combo",  value: `x${bestCombo}`, icon: "🔥" },
+                  { label: "Chuke",       value: missed,          icon: "😬" },
                 ].map(({ label, value, icon }) => (
                   <div key={label} className="flex flex-col items-center gap-1">
                     <span className="text-xl">{icon}</span>
@@ -339,16 +356,18 @@ export default function GameSection({ onNext }: Props) {
               </div>
 
               <div className="flex gap-3 w-full">
+                {/* ── CHANGED: Replay button label ── */}
                 <motion.button
                   onClick={startGame}
                   whileTap={{ scale: 0.93 }}
                   className="flex-1 py-4 rounded-2xl glass font-body font-semibold text-candy-cream/70 text-sm touch-manipulation"
                 >
-                  Again 🔁
+                  Dobara 🔁
                 </motion.button>
                 <div className="flex-1">
+                  {/* ── CHANGED: Finish button label ── */}
                   <CTAButton onClick={onNext} variant="gold" className="w-full">
-                    Finish 🎊
+                    Aage chaliye 🎊
                   </CTAButton>
                 </div>
               </div>
