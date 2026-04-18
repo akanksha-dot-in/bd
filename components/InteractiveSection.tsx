@@ -56,10 +56,14 @@ export default function InteractiveSection({ onNext }: Props) {
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
   const [flipped,  setFlipped]  = useState<number | null>(null);
 
-  const tap = (id: number) => {
-    setFlipped(id);
-    setRevealed(prev => new Set([...prev, id]));
-  };
+ const tap = (id: number) => {
+  setFlipped(id);
+  setRevealed(prev => {
+    const next = new Set(prev);
+    next.add(id);
+    return next;
+  });
+};
 
   const close = () => setFlipped(null);
   const allDone = revealed.size === MEMORIES.length;
