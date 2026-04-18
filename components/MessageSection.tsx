@@ -11,27 +11,27 @@ const MESSAGES = [
   {
     emoji: "🌸",
     title: "Okay but first—",
-    body: "Can we just take a second to appreciate that you exist? Like, the world literally got better the day you showed up.",
+    body: "Happy birthday mister playboiiiii! it's not happy tho apke jivan se ek aur saal chala gya",
   },
   {
     emoji: "💅",
     title: "Real talk though.",
-    body: "You walk into a room and the vibe shifts. You don't follow trends — you ARE the trend. Main character? No. The whole franchise.",
+    body: "Thank you that you came into my life like chalo i consider the fact ki ap ni hote toh life ho jata thoda aur boring",
   },
   {
     emoji: "🔥",
-    title: "Here's what I know.",
-    body: "You're funnier than you think, smarter than you let on, and way too iconic to be spending your birthday reading a website. And yet — here we are.",
+    title: "yk what!",
+    body: "Apki koi aur side chick ni karegi, baith kar code apke liye ek website iss liye thodi qadar kar lijiye",
   },
   {
     emoji: "🥹",
     title: "No but seriously.",
-    body: "Having you around makes everything more fun, more chaotic, and weirdly more beautiful. I hope this year gives you everything you deserve — which is a LOT.",
+    body: "You are really a good person , i mean idk how to say this but jitna ik you usme toh atleast you are",
   },
   {
     emoji: "🎂",
     title: "Happy Birthday.",
-    body: "You're not just older. You're more you. And more you is exactly what this world needs. Now go eat cake. You've earned it.",
+    body: "chaliye atleast apko network mila yeh dekhne ke liye aur apka day banane ke liye",
   },
 ];
 
