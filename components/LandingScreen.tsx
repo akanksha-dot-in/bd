@@ -20,9 +20,9 @@ const EMOJIS = [
 ];
 
 const taglines = [
-  "the moment you've been waiting for",
-  "your favourite day of the year",
-  "a whole vibe, honestly",
+  "akhir aa gayi woh ghadhi ap jiska intezaar kar rahe the",
+  "22 april 2026",
+  "anand's dayyyyyy",
 ];
 
 export default function LandingScreen({ onNext }: Props) {
@@ -135,7 +135,7 @@ export default function LandingScreen({ onNext }: Props) {
               className="flex flex-col items-center gap-3"
             >
               <CTAButton onClick={onNext} variant="pink">
-                <span>Open Your Gift</span>
+                <span>IF ONLY YOU ARE ANAND THEN ENTER</span>
                 <span>🎁</span>
               </CTAButton>
               <motion.p
