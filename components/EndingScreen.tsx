@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import ParticleOrb from "@/components/ui/ParticleOrb";
 
 const WISHES = [
-  "May your year be as iconic as you are.",
+  "May your year be as mast as you are.",
   "May every room you enter know it.",
-  "May the chaos always be in your favour.",
+  "May the things always be in your favour.",
   "May you never dim yourself for anyone.",
-  "May the cake always be good. You deserve it.",
+  "You deserve it all not for today but for everyday in your entire life ",
 ];
 
 const STARS = Array.from({ length: 22 }, (_, i) => ({
@@ -21,12 +21,11 @@ const STARS = Array.from({ length: 22 }, (_, i) => ({
 }));
 
 export default function EndingScreen() {
-  const [wishIndex, setWishIndex]   = useState(0);
-  const [showFinal, setShowFinal]   = useState(false);
-  const [launched,  setLaunched]    = useState(false);
+  const [wishIndex, setWishIndex] = useState(0);
+  const [showFinal, setShowFinal] = useState(false);
+  const [launched,  setLaunched]  = useState(false);
   const confettiRef = useRef<(() => void) | null>(null);
 
-  // Cycle wishes
   useEffect(() => {
     const t = setInterval(() =>
       setWishIndex(i => (i + 1) % WISHES.length), 2600
@@ -34,28 +33,18 @@ export default function EndingScreen() {
     return () => clearInterval(t);
   }, []);
 
-  // Show final message after delay
   useEffect(() => {
     const t = setTimeout(() => setShowFinal(true), 1400);
     return () => clearTimeout(t);
   }, []);
 
-  // Lazy-load confetti
   useEffect(() => {
     import("canvas-confetti").then(mod => {
       const confetti = mod.default;
       confettiRef.current = () => {
         const colors = ["#FF3CAC","#FFD700","#FF6B6B","#7B2FBE","#11998e","#FFB347"];
         const burst = (origin: { x: number; y: number }) =>
-          confetti({
-            particleCount: 90,
-            spread: 80,
-            origin,
-            colors,
-            scalar: 1.1,
-            gravity: 0.9,
-            ticks: 200,
-          });
+          confetti({ particleCount: 90, spread: 80, origin, colors, scalar: 1.1, gravity: 0.9, ticks: 200 });
         burst({ x: 0.25, y: 0.55 });
         setTimeout(() => burst({ x: 0.75, y: 0.55 }), 200);
         setTimeout(() => burst({ x: 0.5,  y: 0.3  }), 450);
@@ -73,7 +62,7 @@ export default function EndingScreen() {
 
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-candy-dark">
-      {/* Background layers */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#1A0A2E] via-[#2D1B69] to-[#0f0720]" />
       <ParticleOrb />
 
@@ -83,19 +72,9 @@ export default function EndingScreen() {
           <motion.div
             key={s.id}
             className="absolute rounded-full bg-white"
-            style={{
-              left:   `${s.x}%`,
-              top:    `${s.y}%`,
-              width:  s.size,
-              height: s.size,
-            }}
+            style={{ left: `${s.x}%`, top: `${s.y}%`, width: s.size, height: s.size }}
             animate={{ opacity: [0.1, 0.9, 0.1], scale: [1, 1.5, 1] }}
-            transition={{
-              duration: 2.5 + s.delay,
-              delay: s.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            transition={{ duration: 2.5 + s.delay, delay: s.delay, repeat: Infinity, ease: "easeInOut" }}
           />
         ))}
       </div>
@@ -119,7 +98,7 @@ export default function EndingScreen() {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-xs mx-auto gap-7">
+      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-xs mx-auto gap-7 py-16">
 
         {/* Crown + sparkles */}
         <motion.div
@@ -134,10 +113,7 @@ export default function EndingScreen() {
               key={e}
               aria-hidden
               className="absolute text-2xl"
-              style={{
-                top:  [-20, -10, -15][i],
-                left: [-24, 60, 20][i],
-              }}
+              style={{ top: [-20,-10,-15][i], left: [-24,60,20][i] }}
               animate={{ opacity: [0,1,0], scale: [0.5,1.2,0.5], rotate: [0,20,-20,0] }}
               transition={{ duration: 2, delay: 0.5 + i*0.4, repeat: Infinity, repeatDelay: 1 }}
             >
@@ -231,23 +207,83 @@ export default function EndingScreen() {
           )}
         </AnimatePresence>
 
+        {/* ── KABUTAR MESSAGE ── */}
+        <AnimatePresence>
+          {showFinal && (
+            <motion.div
+              initial={{ opacity: 0, y: 20, rotate: -1 }}
+              animate={{ opacity: 1, y: 0, rotate: -1 }}
+              transition={{ delay: 0.95, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full rounded-3xl p-5 flex flex-col gap-3 text-left"
+              style={{
+                background: "linear-gradient(135deg,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.02) 100%)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <motion.span
+                  animate={{ rotate: [0, -15, 15, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}
+                  style={{ fontSize: 28, display: "inline-block" }}
+                >
+                  🕊️
+                </motion.span>
+                <span
+                  className="text-xs font-mono tracking-widest uppercase"
+                  style={{ color: "#FF3CAC" }}
+                >
+                  important update
+                </span>
+              </div>
+
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "rgba(255,255,255,0.72)", fontFamily: "'DM Sans', sans-serif" }}
+              >
+                khair woh yaad hai apko, bataye the ham that{" "}
+                <span style={{ color: "rgba(255,215,0,0.9)", fontWeight: 600 }}>
+                  i can train a kabutar and send it to you
+                </span>{" "}
+                — toh woh kabutar train ho gaya hai 🎉
+              </p>
+
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "rgba(255,255,255,0.45)", fontFamily: "'DM Sans', sans-serif" }}
+              >
+                it just needs your address and number jahan actually me chizen deliver ho sake.
+              </p>
+
+              <div
+                className="rounded-2xl px-4 py-3 text-sm font-semibold text-center mt-1"
+                style={{
+                  background: "rgba(255,60,172,0.08)",
+                  border: "1px solid rgba(255,60,172,0.2)",
+                  color: "rgba(255,215,0,0.85)",
+                  fontFamily: "'Playfair Display', serif",
+                }}
+              >
+                toh text kar dijiyega khud se hi 😇
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Confetti button */}
         <AnimatePresence>
           {showFinal && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.1, type: "spring", stiffness: 280, damping: 20 }}
+              transition={{ delay: 1.2, type: "spring", stiffness: 280, damping: 20 }}
               className="flex flex-col items-center gap-2"
             >
               <motion.button
                 onClick={celebrate}
                 whileTap={{ scale: 0.9 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                animate={launched
-                  ? { scale: [1, 1.12, 1], rotate: [0, -8, 8, 0] }
-                  : {}
-                }
+                animate={launched ? { scale: [1, 1.12, 1], rotate: [0, -8, 8, 0] } : {}}
                 transition={{ duration: 0.5 }}
                 className="relative px-8 py-4 rounded-2xl font-body font-semibold text-[17px] text-candy-dark touch-manipulation overflow-hidden min-h-[56px] min-w-[200px]"
                 style={{
@@ -256,7 +292,7 @@ export default function EndingScreen() {
                 }}
               >
                 <span className="relative z-10">
-                  {launched ? "🎊 There you go!" : "Tap for confetti 🎉"}
+                  {launched ? "🎊 There you go!" : "celebration ke liye is button ko dabaen 🎉"}
                 </span>
                 <span className="absolute inset-0 shimmer pointer-events-none" />
               </motion.button>
@@ -277,9 +313,7 @@ export default function EndingScreen() {
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse at center, transparent 40%, rgba(15,7,32,0.7) 100%)"
-        }}
+        style={{ background: "radial-gradient(ellipse at center, transparent 40%, rgba(15,7,32,0.7) 100%)" }}
       />
     </section>
   );

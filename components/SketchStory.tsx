@@ -17,7 +17,6 @@ export default function SketchStory({ onNext }: Props) {
       className="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden px-6 py-16"
       style={{ background: "#0E0719", fontFamily: "'DM Sans', sans-serif" }}
     >
-      {/* Background — mirrors quiz page exactly */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0E0719] via-[#1A0A2E] to-[#0E0719]" />
       <div
         className="absolute inset-0 opacity-30 pointer-events-none"
@@ -280,7 +279,6 @@ export default function SketchStory({ onNext }: Props) {
                 </h2>
               </div>
 
-              {/* Sketch photo — same style as quiz photo cards, path mirrors /photos/photo1.jpg */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -291,7 +289,7 @@ export default function SketchStory({ onNext }: Props) {
                 <img
                   src="/photos/sketch.jpg"
                   alt="The sketch attempt"
-                  className="w-full h-44 object-cover"
+                  className="w-full aspect-[922/1207] object-cover"
                 />
                 <div
                   className="px-4 py-2 text-xs text-center"
@@ -450,11 +448,11 @@ export default function SketchStory({ onNext }: Props) {
                 className="text-center text-sm leading-relaxed px-2"
                 style={{ color: "rgba(255,255,255,0.45)" }}
               >
-                if i can't make art for you, i'll make{" "}
+                so yeah — you just experienced{" "}
                 <span style={{ color: "rgba(255,255,255,0.75)", fontWeight: 600 }}>
-                  an entire internet experience
+                  the entire internet experience
                 </span>{" "}
-                instead. that's normal.
+                i made for you. hope it was worth the kabutar.
               </motion.p>
 
               <motion.button
@@ -471,7 +469,7 @@ export default function SketchStory({ onNext }: Props) {
                   minHeight: 56,
                 }}
               >
-                now enjoy the website 🎉
+                okay one last thing →
               </motion.button>
             </motion.div>
           )}

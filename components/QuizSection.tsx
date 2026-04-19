@@ -54,7 +54,7 @@ const QUESTIONS: Question[] = [
   },
   {
     id: 6,
-    question: "Tumhara brain kab band hota hai?",
+    question: "apka dimag kab band hota hai?",
     options: ["Jaldi 😌", "Kabhi kabhi 🙂", "Late night 🌙", "Kabhi nahi 🤯"],
     result: ["Error 24/7 💀"],
   },
@@ -305,7 +305,7 @@ export default function QuizSection({ onNext }: Props) {
                     <img
                       src={q.photo}
                       alt="evidence 😂"
-                      className="w-full h-44 object-cover"
+                      className="w-full aspect-[9/16] object-cover"
                     />
                     <div
                       className="px-4 py-2 text-xs text-center"
