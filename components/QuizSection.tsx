@@ -20,7 +20,7 @@ const QUESTIONS: Question[] = [
     result: [
       "Error 404: Logic not found 🚫",
       "Redirecting…",
-      "Cute cute bache hehe 😭👶",
+      "kuttiya ka dudh(jo ap apne padoshi se lete the mature hone ke liye) 😭👶",
     ],
   },
   {
@@ -56,7 +56,7 @@ const QUESTIONS: Question[] = [
     id: 6,
     question: "apka dimag kab band hota hai?",
     options: ["Jaldi 😌", "Kabhi kabhi 🙂", "Late night 🌙", "Kabhi nahi 🤯"],
-    result: ["Error 24/7 💀"],
+    result: ["Error 24/7 bas flirt karne time khulta hai 💀"],
   },
   {
     id: 7,
@@ -70,7 +70,7 @@ const QUESTIONS: Question[] = [
     id: 8,
     question: "Mandir jaake kya maanga?",
     options: ["Paisa 💸", "Pyaar ❤️", "Success 🏆", "Shanti ☮️"],
-    result: ["ek tub bache lol 💀👶"],
+    result: ["ek tub bhar kar chote-chote bache lol 💀👶"],
     photo: "/photos/photo2.jpg",
   },
 ];
