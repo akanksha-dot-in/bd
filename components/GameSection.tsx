@@ -161,17 +161,17 @@ export default function GameSection({ onNext }: Props) {
                   Vibes pakad, chaos nahi.
                 </h2>
                 <p className="font-accent italic text-candy-cream/60 text-[15px]">
-                  birthday wali emojis tap kar, bombs se bach — simple hai tu 😌
+                  birthday wali emojis tap kariye!!!!, bombs se bach kar --- basics hehe
                 </p>
               </div>
 
               {/* ── CHANGED: Personalized rules in Hinglish ── */}
               <div className="glass rounded-2xl p-5 w-full space-y-3 text-left">
                 {[
-                  { icon:"🎂", rule:"Birthday emojis tap kar → points milenge" },
-                  { icon:"💀", rule:"Bombs se bach → 15 pts jayenge" },
+                  { icon:"🎂", rule:"Birthday emojis tap kariye → points milenge" },
+                  { icon:"💀", rule:"Bombs se bachiye → 15 pts jayenge" },
                   { icon:"🔥", rule:"3+ combo → multiplier activate!" },
-                  { icon:"⏱️", rule:`Sirf ${DURATION} seconds hain, queen` },
+                  { icon:"⏱️", rule:`Sirf ${DURATION} seconds hain,my king` },
                 ].map(({icon,rule}) => (
                   <div key={rule} className="flex items-center gap-3">
                     <span className="text-xl w-7 text-center">{icon}</span>
@@ -182,7 +182,7 @@ export default function GameSection({ onNext }: Props) {
 
               {/* ── CHANGED: CTA button label ── */}
               <CTAButton onClick={startGame} variant="pink" className="w-full">
-                Chalo phir, start kariye 🚀
+                Chalo phir, start kariye 
               </CTAButton>
             </div>
           </motion.div>

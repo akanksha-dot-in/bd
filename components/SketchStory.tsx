@@ -107,7 +107,7 @@ export default function SketchStory({ onNext }: Props) {
                   the plan.
                 </h2>
                 <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
-                  there was a different plan. a much more ambitious one.
+                  there was a different plan. a much more ambitious one i mean naam hi Akanksha hai.
                 </p>
               </div>
 
@@ -220,7 +220,7 @@ export default function SketchStory({ onNext }: Props) {
                     fontFamily: "'Playfair Display', serif",
                   }}
                 >
-                  8 attempts. 1 month. zero good results.
+                  8 attempts. 1 month. zero good results phir hame pata chal gaya ki art mere bas ki ni hai.
                 </p>
               </motion.div>
 
@@ -238,7 +238,7 @@ export default function SketchStory({ onNext }: Props) {
                   minHeight: 56,
                 }}
               >
-                see the carnage →
+                so.............. →
               </motion.button>
             </motion.div>
           )}
@@ -275,7 +275,7 @@ export default function SketchStory({ onNext }: Props) {
                     fontFamily: "'Playfair Display', serif",
                   }}
                 >
-                  my finest work. truly.
+                  my finest work. truly. matlab jitne sare banaye the usme
                 </h2>
               </div>
 
@@ -299,7 +299,7 @@ export default function SketchStory({ onNext }: Props) {
                     fontFamily: "'DM Sans', sans-serif",
                   }}
                 >
-                  Exhibit A 📸
+                  yeah this is you - thode thode se toh lag hi rahe ho 
                 </div>
               </motion.div>
 
@@ -315,7 +315,7 @@ export default function SketchStory({ onNext }: Props) {
                   maxWidth: "200px",
                 }}
               >
-                i tried SO hard okay 😭
+                i tried SO hard okay 😭 ek toh apki koi sidhe face wali pic bhi ni hai jo dekh kar refer kare insan upar se camera kharab ki photo dhang hi iski aa hi nahi rahi
               </motion.div>
 
               <motion.button
@@ -380,7 +380,7 @@ export default function SketchStory({ onNext }: Props) {
                   i learned to code.
                 </h2>
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
-                  (i already knew how to code but that's not the point)
+                  (i already knew how to code but that's not the point hehehe but end sem ke bich me i couldn't think of anything else)
                 </p>
               </div>
 
@@ -450,9 +450,9 @@ export default function SketchStory({ onNext }: Props) {
               >
                 so yeah — you just experienced{" "}
                 <span style={{ color: "rgba(255,255,255,0.75)", fontWeight: 600 }}>
-                  the entire internet experience
+                  the entire internet experience that i made for you
                 </span>{" "}
-                i made for you. hope it was worth the kabutar.
+                hope it was worth(i mean you can consider it thoda---efforts ke hi number de do sir ji )
               </motion.p>
 
               <motion.button
