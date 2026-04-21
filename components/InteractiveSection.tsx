@@ -39,7 +39,7 @@ const MEMORIES = [
   {
     id: 5,
     front: "🌙  A reminder",
-    back: "raat me so jaya kariye, raat-raat bhar jaag kar ladiyon se baat karne me kuch ni rakha hai ",
+    back: "raat me so jaya kariye, raat-raat bhar jaag kar ladkiyon se baat karne me kuch ni rakha hai ",
     color: "from-violet-500/30 to-purple-700/30",
     accent: "#7B2FBE",
   },

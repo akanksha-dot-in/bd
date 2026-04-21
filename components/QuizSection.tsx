@@ -43,8 +43,8 @@ const QUESTIONS: Question[] = [
   {
     id: 4,
     question: "Ham apke liye kya hai?",
-    options: ["Dost 🤝", "Best friend 🫶", "Random insan 🙃", "Timepass 😭"],
-    result: ["Free therapist 🧠"],
+    options: ["Dost 🤝", "pyaar ❤️", "Random insan 🙃", "Timepass 😭"],
+    result: ["DEVI"],
   },
   {
     id: 5,
